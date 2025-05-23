@@ -1,0 +1,18 @@
+[
+    {
+        "name" : "Dijkstra algorithm",
+        "description" : "Dijkstras algorithm is an algorithm for finding the shortest paths between nodes in a weighted graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later.\n\n#{https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif}\n\nThe algorithm exists in many variants. Dijkstras original algorithm found the shortest path between two given nodes, but a more common variant fixes a single node as the \"source\" node and finds shortest paths from the source to all other nodes in the graph, producing a shortest-path tree."
+    }, 
+    {
+        "name" : "Breadth-first search",
+        "description": ""
+    },
+    {
+        "name" : "Depth-first search",
+        "description" : ""
+    }, 
+    {
+        "name" : "Floyd warshall algorithm",
+        "description": ""
+    }
+]

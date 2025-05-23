@@ -1,0 +1,383 @@
+
+
+/* Color Theme Swatches in Hex */
+.flauto-1-hex { color: #252426; }
+.flauto-2-hex { color: #3F3D40; }
+.flauto-3-hex { color: #BFBFBF; }
+.flauto-4-hex { color: #A69485; }
+.flauto-5-hex { color: #F2F2F2; }
+
+/* Color Theme Swatches in RGBA */
+.flauto-1-rgba { color: rgba(37, 35, 38, 1); }
+.flauto-2-rgba { color: rgba(62, 61, 63, 1); }
+.flauto-3-rgba { color: rgba(191, 191, 191, 1); }
+.flauto-4-rgba { color: rgba(165, 148, 132, 1); }
+.flauto-5-rgba { color: rgba(242, 242, 242, 1); }
+
+/* Color Theme Swatches in HSLA */
+.flauto-1-hsla { color: hsla(275, 3, 14, 1); }
+.flauto-2-hsla { color: hsla(275, 2, 24, 1); }
+.flauto-3-hsla { color: hsla(0, 0, 75, 1); }
+.flauto-4-hsla { color: hsla(28, 15, 58, 1); }
+.flauto-5-hsla { color: hsla(0, 0, 95, 1); }
+
+
+/* https://color.adobe.com/search?q=begie */
+
+/* Color Theme Swatches in Hex */
+.Christmas-box-in-woman-hands-with-black-manicure-1-hex { color: #8FA66D; }
+.Christmas-box-in-woman-hands-with-black-manicure-2-hex { color: #BFA995; }
+.Christmas-box-in-woman-hands-with-black-manicure-3-hex { color: #593C36; }
+.Christmas-box-in-woman-hands-with-black-manicure-4-hex { color: #A67165; }
+.Christmas-box-in-woman-hands-with-black-manicure-5-hex { color: #73352F; }
+
+/* Color Theme Swatches in RGBA */
+.Christmas-box-in-woman-hands-with-black-manicure-1-rgba { color: rgba(143, 165, 109, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-2-rgba { color: rgba(191, 168, 149, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-3-rgba { color: rgba(89, 60, 53, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-4-rgba { color: rgba(165, 112, 101, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-5-rgba { color: rgba(114, 52, 47, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Christmas-box-in-woman-hands-with-black-manicure-1-hsla { color: hsla(84, 23, 53, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-2-hsla { color: hsla(28, 24, 66, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-3-hsla { color: hsla(11, 25, 27, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-4-hsla { color: hsla(11, 26, 52, 1); }
+.Christmas-box-in-woman-hands-with-black-manicure-5-hsla { color: hsla(5, 41, 31, 1); }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+div {
+    margin : 0;
+    padding: 0;
+}
+.app-container {
+    animation: fade 0.5s;
+    display: none;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.btn {
+    border: none;
+    outline: none;
+}
+
+.material-icons {
+    user-select: none;
+}
+.visualizer {
+    display: grid;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    font-family: "Audiowide";
+}
+.material-icons{
+    user-select: none;
+}
+
+.node {
+    position: relative;
+    display : inline-block;
+    height: 25px;
+    width:25px;
+    border: 0.1px #10101016 solid;
+    transition: 0.5s;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    
+}
+
+.node:hover {
+    background-color: rgba(35, 35, 35, 0.222);
+}
+
+.wall {
+    top:0;
+    left:0;
+    position: absolute;
+    background-color: #3F3D40;
+    height: 25px;
+    width: 25px;
+    animation-name: zoom;
+    animation-duration: 0.2s;
+    user-select: none;
+
+}
+
+@keyframes zoom {
+    from {scale: 0; opacity: 0;}
+    top { scale: 1; opacity: 1;}
+}
+
+
+.u_node {
+    margin:0;
+    padding:0;
+    position:absolute;
+    /* background-color: red; */
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    font-size: 30px;
+    /* display: none; */
+    color: #3F3D40;
+    /* background: #3f3d4055; */
+    font-weight: bold;
+    user-select: none;
+
+}
+.start_node{
+    font-size: 50px;
+}
+
+
+
+.action_btn
+{
+    background-color: rgba(255, 255, 255, 0.552);
+    padding: 5px 10px 5px 10px;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: "Audiowide";
+    margin: 5px;
+    transition: 0.2s linear;
+}
+.action_btn:hover{
+    background-color: rgba(255, 255, 255, 0.815);
+    translate:0 -2.5px;
+}
+.visualize_btn_container{
+    position: fixed;
+    /* top:0; */
+    left: 50%;
+    right: 50%;
+    bottom: 10px;
+    translate: -50% 70%;
+    width: 200px;
+    /* background : red; */
+    height: 100px;
+    transition: 0.1s linear;
+    width: 300px;
+
+    
+}
+.visualize_btn_container:hover {
+    translate: -50% 25%;
+}
+.visulaize_btn {
+    position: relative;
+    font-family: "Bruno Ace";
+    background-color: #A69485;
+    color: #3F3D40;
+    padding: 8px 0px 8px 0px;
+    font-size: 16px;
+    border-radius:60px;
+    cursor: pointer;
+    box-shadow: 0px 10px 50px 20px rgba(0, 0, 0, 0.525) ;
+    text-align: center;
+    width: 250px;
+    top:50%;
+    left:50%;
+    font-weight: 700;
+    translate: -50% -50%;
+    /* z-index: 1; */
+}
+
+.visulaize_btn:hover{
+    opacity: 0.8;
+}
+.menu_button_container
+{
+    position: fixed;
+    display:flex;
+    top:10px;
+    left: 50%;
+    right: 50%;
+    translate: -50% 0;
+    background-color: #252426;
+    width: 550px;
+    border-radius: 60px;
+    justify-content: center;
+    /* overflow: hidden; */
+    
+
+}
+.menu_button {
+    margin:0;
+    color:#A69485 ;
+    background: #252426;
+    padding: 10px 24px 10px 24px;
+    font-family: "Bruno Ace";
+    cursor: pointer;
+    border-right:0.05px solid  #A69485;
+
+}
+.menu_button:hover {
+    background:#2a292b;
+    /* opacity: 0.9; */
+}
+
+.visited_node {
+    position: absolute;
+    background: #bfa995; 
+    height:35px;
+    width:35px;
+    border-radius: 100%;
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation-name: visiting_zoom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    display: none;
+    /* animation: visiting_zoom 0.5s; */
+    /* z-index: 2; */
+}
+.visiting_node {
+    position: absolute;
+    background: #bfa995; 
+    height:35px;
+    width:35px;
+    border-radius: 100%;
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation-name: visiting_zoom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    /* display: none; */
+    /* z-index: 1; */
+}
+.path {
+    position: absolute;
+    background: #8fa66d;
+    height:35px;
+    width:35px;
+    border-radius: 100%;
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation-name: zoom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    /* z-index: 1; */
+
+}
+
+.dropdown-menu {
+    position: absolute;
+    padding: 10px 0 10px 0;
+    margin-top:20px ;
+    background:#252426 ;
+    /* display: none;
+     */
+     display: none;
+     width: 250px;
+}
+
+#algoSpeed-menu {
+    width: 350px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+#algoSpeed-menu > .item {
+    display: inline-block;
+    /* background: #252426; */
+    color: #A69485;
+    padding: 8px 0px 8px 0px;
+    width: 45px;
+    text-align: center;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#algoSpeed-menu > .item:hover {
+    background: #333234;
+}
+/* @keyframes visiting_zoom {
+    0% {
+      transform: scale(0.3);
+      background-color: rgba(0, 0, 66, 0.75);
+      border-radius: 100%;
+    }
+  
+    50% {
+      background-color: rgba(17, 104, 217, 0.75);
+    }
+  
+    75% {
+      transform: scale(1.2);
+      background-color: rgba(0, 217, 159, 0.75);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: rgba(0, 190, 218, 0.75);
+
+  }
+
+} */
+
+@keyframes visiting_zoom {
+    0% {opacity: 0; scale: 0; background: #252426; }
+    /* 50% {opacity: 0; scale: 0; background: #8FA66D;} */
+    
+    100% {opacity: 1; scale: 1; background: #bfa995;}
+}
+@keyframes zoom {
+    0% {opacity: 0; scale: 0;}
+    /* 50% {opacity: 0; scale: 0; background: #8FA66D;} */
+    
+    100% {opacity: 1; scale: 1;}
+}
+#algorithm-menu {
+    border-radius: 18px;
+    overflow: hidden;
+}
+#algorithm-menu > .item {
+    padding: 8px 15px 8px 15px;
+    cursor: pointer;
+    text-align: start;
+}
+
+#algorithm-menu > .item:hover {
+    background-color: #333234;
+}
+.active-menu-item {
+    background: #414042;
+    /* background-color: #414042; */
+}
+
+

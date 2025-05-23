@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "map_algorithm_visualizer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [
+    "javascript",
+    "mapDataStructure",
+    "css",
+    "html",
+    "oop",
+    "visualizer"
+  ],
+  "author": "rajnish",
+  "license": "ISC",
+  "description": ""
+}
