@@ -14,7 +14,7 @@
 .loader {
     height: 50px;
     width:50px;
-    background: #D91A60;
+    background: #A69485;
     border-radius: 50%;
     animation: loading 2s;
     animation-iteration-count: infinite;

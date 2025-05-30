@@ -28,10 +28,8 @@ export class app {
                 DIJKSTRA: 1,
                 DFS: 2,
                 BFS: 3,
-                BELLFORD: 4,
-                FLOYDWARSHALL: 5
             },
-            selected_algorithm: 1,
+            selected_algorithm: 3,
             visited_node_dom: [],
             wall_dom : []
         }

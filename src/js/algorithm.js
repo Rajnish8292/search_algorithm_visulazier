@@ -1,6 +1,6 @@
 import {node_, isVisited, createVisitedNode} from "/js/utils.js"  
-
 export function dfs(self) {
+    console.log(self)
     const i = self.start_node_row, j = self.start_node_col;
     const node_stack = new stack();
     let visited = [], solution = [], filter = [[-1, 0], [0, -1], [1, 0], [0, 1]];
@@ -11,57 +11,58 @@ export function dfs(self) {
 
     (async function() 
     {
+        self.changeAppRunningStatusTo(true);
         while(!node_stack.isEmpty())
         {
             const node = node_stack.pop();
             const row = node.data[0], col = node.data[1];
-            console.log(node_stack);
-    
-            if(self.algo_data.grid[row] != undefined)
+            
+            // Check if node is valid before processing
+            if(self.algo_data.grid[row] === undefined || self.algo_data.grid[row][col] === undefined) {
+                continue;
+            }
+
+            // Visualize current node (if not start/end)
+            if((row != self.start_node_row || col != self.start_node_col) && 
+               (row != self.end_node_row || col != self.end_node_col)) {
+                createVisitedNode(self, self.no_of_node_cols, row, col);
+            }
+            
+            if(self.algo_data.grid[row][col] == 3)
             {
-                if(self.algo_data.grid[row][col] != undefined && self.algo_data.grid[row][col] != 1)
+                let temp = node;
+                while(temp.parent)
                 {
-                    if((row != self.start_node_row && col != self.start_node_col) || (row != self.end_node_row && col != self.end_node_col)) {
-                        createVisitedNode(self, self.no_of_node_cols, row, col);
-                    }
-                    
-                    if(self.algo_data.grid[row][col] == 3)
-                    {
-                        let temp = node;
-                        while(temp.parent)
-                            {
-                                solution.push(temp);
-                                temp = temp.parent;
-                            }
-                            solution.shift();
-                            self.create_path(solution);
-                        console.log("found it!");
-                        return 1;
-                    }
-    
-    
-                    
-    
-                    for(let f = 0; f < filter.length; f++)
-                    {
-                        const n_row = row+filter[f][0], n_col = col+filter[f][1];
-                        console.log(n_row, n_col);
-                        if(!isVisited(visited, n_row, n_col)) 
-                        {
-                            const n_node = new node_([n_row, n_col], node);
-                            node_stack.push(n_node);
-                            
-                            visited.push(n_node.data);
-                        }
-                        
-                    }
-    
+                    solution.push(temp);
+                    temp = temp.parent;
                 }
+                solution.shift();
+                self.create_path(solution);
+                console.log("found it!");
+                self.changeAppRunningStatusTo(false);
+                return 1;
+            }
+
+            for(let f = 0; f < filter.length; f++)
+            {
+                const n_row = row+filter[f][0], n_col = col+filter[f][1];
+                
+                // Check boundaries and if already visited
+                if(self.algo_data.grid[n_row] === undefined || 
+                   self.algo_data.grid[n_row][n_col] === undefined || 
+                   self.algo_data.grid[n_row][n_col] == 1 || 
+                   isVisited(visited, n_row, n_col)) {
+                    continue;
+                }
+                
+                const n_node = new node_([n_row, n_col], node);
+                node_stack.push(n_node);
+                visited.push(n_node.data);
             }
             await new Promise(resolve => setTimeout(resolve, self.visualization_speed));
         }
+        self.changeAppRunningStatusTo(false);
     })();
-   
 }
   
 export function bfs(self) {
@@ -98,9 +99,7 @@ export function bfs(self) {
                             node_queue.enqueue(new_node);
                             visited.push([row, col]);
 
-                            // we found the final found 
                             if(self.algo_data.grid[row][col] == 3) {
-
                                 let temp = new_node;
                                 while(temp.parent)
                                 {
@@ -112,26 +111,15 @@ export function bfs(self) {
                                 self.changeAppRunningStatusTo(false);
                                 return 1;
                             }
-                                // let node_elem = document.getElementsByClassName("node")[self.no_of_node_cols*row + col];
-                                // let visited_dom_elem = document.createElement("div");
-                                // visited_dom_elem.className = "visiting_node";
-                                // node_elem.appendChild(visited_dom_elem);
-                                // self.algo_data.visited_node_dom.push(visited_dom_elem); // insert visited dom element
-    
-                                // node_elem.dataset.isExplored = true;
-                                createVisitedNode(self, self.no_of_node_cols, row, col);
+                            createVisitedNode(self, self.no_of_node_cols, row, col);
                             await new Promise(resolve => setTimeout(resolve, self.visualization_speed));
                         }
                     }
-                    
                 }
             }
         }
         self.changeAppRunningStatusTo(false);
-
     })();
-
- 
 }
 
 export function dijkstra(self)
