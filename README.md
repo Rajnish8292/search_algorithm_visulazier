@@ -2,6 +2,8 @@
 
 A web-based tool to visualize popular search algorithms such as Breadth-First Search (BFS), Depth-First Search (DFS), and more. This interactive application helps users understand how these algorithms explore a grid to find the shortest path between two points.
 
+## Live on [https://search-algorithm-visulazier-4362119788.asia-south1.run.app/](https://search-algorithm-visulazier-4362119788.asia-south1.run.app/)
+
 ## Features
 
 - Visualizes **Breadth-First Search (BFS)** and **Depth-First Search (DFS)**
